@@ -176,7 +176,7 @@
                             <li>HMMs have been a cornerstone in speech processing, particularly in speech recognition. They model the statistical properties of speech signals and are used to represent both the acoustic features of speech and the linguistic content.</li>
                         </ul>
                         <div class="img-container">
-                            <img src="/img/SPM/HMM.png" alt="HMM">
+                            <img src="img/SPM/HMM.png" alt="HMM">
                         </div>
                     </li>
                     <li>
@@ -259,9 +259,9 @@
                 <h3>Common activation functions</h3>
                 <p>An activation function determines whether a neuron should be activated. The nonlinear functions typically convert the output of a given neuron to a value between 0 and 1 or -1 and 1.</p>
                 <div class="img-container">
-                    <img src="/img/RNN/sigmod-act-fun.jpg" alt="sigmod">
-                    <img src="/img/RNN/tanh-act-fun.jpg" alt="tanh">
-                    <img src="/img/RNN/relu-act-fun.jpg" alt="relu">
+                    <img src="img/RNN/sigmod-act-fun.jpg" alt="sigmod">
+                    <img src="img/RNN/tanh-act-fun.jpg" alt="tanh">
+                    <img src="img/RNN/relu-act-fun.jpg" alt="relu">
                 </div>
                 <h3>Variant RNN architectures</h3>
                 <ul class="u-list">
@@ -269,21 +269,21 @@
                         <h4>Bidirectional recurrent neural networks (BRNN):</h4>
                         <p>These are a variant network architecture of RNNs. While unidirectional RNNs can only drawn from previous inputs to make predictions about the current state, bidirectional RNNs pull in future data to improve the accuracy of it. If we return to the example of “feeling under the weather” earlier in this article, the model can better predict that the second word in that phrase is “under” if it knew that the last word in the sequence is “weather.”</p>
                         <div class="img-container">
-                            <img src="/img/RNN/birnn.jpg" alt="birnn">
+                            <img src="img/RNN/birnn.jpg" alt="birnn">
                         </div>
                     </li>
                     <li>
                         <h4>Long short-term memory (LSTM): </h4>
                         <p>This is a popular RNN architecture, which was introduced by Sepp Hochreiter and Juergen Schmidhuber as a solution to vanishing gradient problem. In their paper, they work to address the problem of long-term dependencies. That is, if the previous state that is influencing the current prediction is not in the recent past, the RNN model may not be able to accurately predict the current state. As an example, let's say we wanted to predict the italicized words in following, “Alice is allergic to nuts. She can't eat peanut butter.” The context of a nut allergy can help us anticipate that the food that cannot be eaten contains nuts. However, if that context was a few sentences prior, then it would make it difficult, or even impossible, for the RNN to connect the information. To remedy this, LSTMs have “cells” in the hidden layers of the neural network, which have three gates-an input gate, an output gate, and a forget gate. These gates control the flow of information which is needed to predict the output in the network.  For example, if gender pronouns, such as “she”, was repeated multiple times in prior sentences, you may exclude that from the cell state.</p>
                         <div class="img-container">
-                            <img src="/img/RNN/rnn-three-gates.jpg" alt="LSTM">
+                            <img src="img/RNN/rnn-three-gates.jpg" alt="LSTM">
                         </div>
                     </li>
                     <li>
                         <h4>Gated recurrent units (GRUs):</h4>
                         <p>his RNN variant is similar the LSTMs as it also works to address the short-term memory problem of RNN models. Instead of using a “cell state” regulate information, it uses hidden states, and instead of three gates, it has two—a reset gate and an update gate. Similar to the gates within LSTMs, the reset and update gates control how much and which information to retain.</p>
                         <div class="img-container">
-                            <img src="/img/RNN/grunn.jpg" alt="grunn">
+                            <img src="img/RNN/grunn.jpg" alt="grunn">
                         </div>
                     </li>
                 </ul>
@@ -306,7 +306,7 @@
                 <h2>Speech Recognition System</h2>
                 <p>Speech recognition is invading our lives. It's built into our phones, our game consoles and our smart watches. It's even automating our homes. For just $50, you can get an Amazon Echo Dot — a magic box that allows you to order pizza, get a weather report or even buy trash bags — just by speaking out loud:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/echo-dot.webp" alt="echo-dot">
+                    <img src="img/SRS/echo-dot.webp" alt="echo-dot">
                 </div>
                 <p>The Echo Dot has been so popular this holiday season that Amazon can't seem to keep them in stock!</p>
                 <p>But speech recognition has been around for decades, so why is it just now hitting the mainstream? The reason is that deep learning finally made speech recognition accurate enough to be useful outside of carefully controlled environments.</p>
@@ -315,32 +315,32 @@
                 <h3>Step 1: Turning Sounds into Bits</h3>
                 <p> Let's use this sound clip of me saying “Hello”:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/wf-hello.webp" alt="wave-form-hello">
+                    <img src="img/SRS/wf-hello.webp" alt="wave-form-hello">
                 </div>
                 <p>Sound waves are one-dimensional. At every moment in time, they have a single value based on the height of the wave. Let's zoom in on one tiny part of the sound wave and take a look:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/1d-sound-waves.webp" alt="one-dimentional-waveforms">
+                    <img src="img/SRS/1d-sound-waves.webp" alt="one-dimentional-waveforms">
                 </div>
                 <p>To turn this sound wave into numbers, we just record of the height of the wave at equally-spaced points:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/sampled-sound-waves.gif" alt="sampled sound waves">
+                    <img src="img/SRS/sampled-sound-waves.gif" alt="sampled sound waves">
                 </div>
                 <p>This is called sampling. We are taking a reading thousands of times a second and recording a number representing the height of the sound wave at that point in time. That's basically all an uncompressed .wav audio file is.</p>
                 <p>“CD Quality” audio is sampled at 44.1khz (44,100 readings per second). But for speech recognition, a sampling rate of 16khz (16,000 samples per second) is enough to cover the frequency range of human speech.</p>
                 <p>Lets sample our “Hello” sound wave 16,000 times per second. Here's the first 100 samples:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/arr-amp.webp" alt="array of sampled amplitude" class="improve">
+                    <img src="img/SRS/arr-amp.webp" alt="array of sampled amplitude" class="improve">
                 </div>
                 <h3>Step 2: Pre-processing our Sampled Sound Data</h3>
                 <p>We now have an array of numbers with each number representing the sound wave's amplitude at 1/16,000th of a second intervals.</p>
                 <p>We could feed these numbers right into a neural network. But trying to recognize speech patterns by processing these samples directly is difficult. Instead, we can make the problem easier by doing some pre-processing on the audio data.</p>
                 <p>Let's start by grouping our sampled audio into 20-millisecond-long chunks. Here's our first 20 milliseconds of audio (i.e., our first 320 samples):</p>
                 <div class="img-container">
-                    <img src="/img/SRS/20ms-arr-amp.webp" alt="20ms array of amplitudes" class="improve">
+                    <img src="img/SRS/20ms-arr-amp.webp" alt="20ms array of amplitudes" class="improve">
                 </div>
                 <p>Plotting those numbers as a simple line graph gives us a rough approximation of the original sound wave for that 20 millisecond period of time:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/ploted-20ms-array.webp" alt="plotted graph of 20ms array" class="improve">
+                    <img src="img/SRS/ploted-20ms-array.webp" alt="plotted graph of 20ms array" class="improve">
                 </div>
                 <p>This recording is only 1/50th of a second long. But even this short recording is a complex mish-mash of different frequencies of sound. There's some low sounds, some mid-range sounds, and even some high-pitched sounds sprinkled in. But taken all together, these different frequencies mix together to make up the complex sound of human speech.</p>
                 <p>To make this data easier for a neural network to process, we are going to break apart this complex sound wave into it's component parts. We'll break out the low-pitched parts, the next-lowest-pitched-parts, and so on. Then by adding up how much energy is in each of those frequency bands (from low to high), we create a fingerprint of sorts for this audio snippet.</p>
@@ -348,26 +348,26 @@
                 <p>We do this using a mathematic operation called a Fourier transform. It breaks apart the complex sound wave into the simple sound waves that make it up. Once we have those individual sound waves, we add up how much energy is contained in each one.</p>
                 <p>The end result is a score of how important each frequency range is, from low pitch (i.e. bass notes) to high pitch. Each number below represents how much energy was in each 50hz band of our 20 millisecond audio clip:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/50hz-freq-band.webp" alt="50hz-freq-band" class="improve">
+                    <img src="img/SRS/50hz-freq-band.webp" alt="50hz-freq-band" class="improve">
                 </div>
                 <p>But this is a lot easier to see when you draw this as a chart:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/clr-band-20hz.webp" alt="clr-band-20hz" class="improve">
+                    <img src="img/SRS/clr-band-20hz.webp" alt="clr-band-20hz" class="improve">
                 </div>
                 <p>If we repeat this process on every 20 millisecond chunk of audio, we end up with a spectrogram (each column from left-to-right is one 20ms chunk):</p>
                 <div class="img-container">
-                    <img src="/img/SRS/full-spect-hello.webp" alt="full-spect-hello" class="lg-improve">
+                    <img src="img/SRS/full-spect-hello.webp" alt="full-spect-hello" class="lg-improve">
                 </div>
                 <p>A spectrogram is cool because you can actually see musical notes and other pitch patterns in audio data. A neural network can find patterns in this kind of data more easily than raw sound waves. So this is the data representation we'll actually feed into our neural network.</p>
                 <h3>Step 3: Recognizing Characters from Short Sounds</h3>
                 <p>Now that we have our audio in a format that's easy to process, we will feed it into a deep neural network. The input to the neural network will be 20 millisecond audio chunks. For each little audio slice, it will try to figure out the letter that corresponds the sound currently being spoken.</p>
                 <div class="img-container">
-                    <img src="/img/SRS/statefull-model.webp" alt="statefull-model" class="lg-improve">
+                    <img src="img/SRS/statefull-model.webp" alt="statefull-model" class="lg-improve">
                 </div>
                 <p>We'll use a recurrent neural network — that is, a neural network that has a memory that influences future predictions. That's because each letter it predicts should affect the likelihood of the next letter it will predict too. For example, if we have said “HEL” so far, it's very likely we will say “LO” next to finish out the word “Hello”. It's much less likely that we will say something unpronounceable next like “XYZ”. So having that memory of previous predictions helps the neural network make more accurate predictions going forward.</p>
                 <p>After we run our entire audio clip through the neural network (one chunk at a time), we'll end up with a mapping of each audio chunk to the letters most likely spoken during that chunk. Here's what that mapping looks like for me saying “Hello”:</p>
                 <div class="img-container">
-                    <img src="/img/SRS/freq-map.webp" alt="freq-map" class="lg-improve">
+                    <img src="img/SRS/freq-map.webp" alt="freq-map" class="lg-improve">
                 </div>
                 <p>Our neural net is predicting that one likely thing I said was “HHHEE_LL_LLLOOO”. But it also thinks that it was possible that I said “HHHUU_LL_LLLOOO” or even “AAAUU_LL_LLLOOO”.</p>
                 <p>We have some steps we follow to clean up this output. First, we'll replace any repeated characters a single character:</p>
