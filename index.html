@@ -253,15 +253,15 @@
                 <h3>Types of recurrent neural networks</h3>
                 <p>Feedforward networks map one input to one output, and while we've visualized recurrent neural networks in this way in the above diagrams, they do not actually have this constraint. Instead, their inputs and outputs can vary in length, and different types of RNNs are used for different use cases, such as music generation, sentiment classification, and machine translation.</p>
                 <div class="img-container">
-                    <img src="/img/RNN/rnn-vs-fnn.png" alt="recurrent vs feed-forward">
-                    <img src="/img/RNN/propagatiom-rnn.png" alt="BPTT">
+                    <img src="/img/RNN/rnn-vs-fnn.jpg" alt="recurrent vs feed-forward">
+                    <img src="/img/RNN/propagatiom-rnn.jpg" alt="BPTT">
                 </div>
                 <h3>Common activation functions</h3>
                 <p>An activation function determines whether a neuron should be activated. The nonlinear functions typically convert the output of a given neuron to a value between 0 and 1 or -1 and 1.</p>
                 <div class="img-container">
-                    <img src="/img/RNN/sigmod-act-fun.webp" alt="sigmod">
-                    <img src="/img/RNN/tanh-act-fun.webp" alt="tanh">
-                    <img src="/img/RNN/relu-act-fun.webp" alt="relu">
+                    <img src="/img/RNN/sigmod-act-fun.jpg" alt="sigmod">
+                    <img src="/img/RNN/tanh-act-fun.jpg" alt="tanh">
+                    <img src="/img/RNN/relu-act-fun.jpg" alt="relu">
                 </div>
                 <h3>Variant RNN architectures</h3>
                 <ul class="u-list">
@@ -269,21 +269,21 @@
                         <h4>Bidirectional recurrent neural networks (BRNN):</h4>
                         <p>These are a variant network architecture of RNNs. While unidirectional RNNs can only drawn from previous inputs to make predictions about the current state, bidirectional RNNs pull in future data to improve the accuracy of it. If we return to the example of “feeling under the weather” earlier in this article, the model can better predict that the second word in that phrase is “under” if it knew that the last word in the sequence is “weather.”</p>
                         <div class="img-container">
-                            <img src="/img/RNN/birnn.svg" alt="birnn">
+                            <img src="/img/RNN/birnn.jpg" alt="birnn">
                         </div>
                     </li>
                     <li>
                         <h4>Long short-term memory (LSTM): </h4>
                         <p>This is a popular RNN architecture, which was introduced by Sepp Hochreiter and Juergen Schmidhuber as a solution to vanishing gradient problem. In their paper, they work to address the problem of long-term dependencies. That is, if the previous state that is influencing the current prediction is not in the recent past, the RNN model may not be able to accurately predict the current state. As an example, let's say we wanted to predict the italicized words in following, “Alice is allergic to nuts. She can't eat peanut butter.” The context of a nut allergy can help us anticipate that the food that cannot be eaten contains nuts. However, if that context was a few sentences prior, then it would make it difficult, or even impossible, for the RNN to connect the information. To remedy this, LSTMs have “cells” in the hidden layers of the neural network, which have three gates-an input gate, an output gate, and a forget gate. These gates control the flow of information which is needed to predict the output in the network.  For example, if gender pronouns, such as “she”, was repeated multiple times in prior sentences, you may exclude that from the cell state.</p>
                         <div class="img-container">
-                            <img src="/img/RNN/rnn-three-gates.png" alt="LSTM">
+                            <img src="/img/RNN/rnn-three-gates.jpg" alt="LSTM">
                         </div>
                     </li>
                     <li>
                         <h4>Gated recurrent units (GRUs):</h4>
                         <p>his RNN variant is similar the LSTMs as it also works to address the short-term memory problem of RNN models. Instead of using a “cell state” regulate information, it uses hidden states, and instead of three gates, it has two—a reset gate and an update gate. Similar to the gates within LSTMs, the reset and update gates control how much and which information to retain.</p>
                         <div class="img-container">
-                            <img src="/img/RNN/grunn.webp" alt="grunn">
+                            <img src="/img/RNN/grunn.jpg" alt="grunn">
                         </div>
                     </li>
                 </ul>
