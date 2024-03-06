@@ -224,4 +224,7 @@ h2 {
     .img-container img {
         height: 12rem;
     }
+
+    #foot p {
+        text-align: center;
 }
