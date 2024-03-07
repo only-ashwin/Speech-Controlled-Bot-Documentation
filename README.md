@@ -1,4 +1,4 @@
-#Speech Controlled Bot on Wheels
+<h1>Speech Controlled Bot on Wheels</h1>
 <p>This is a documentation website which describes the working of speech recognition system using recurrent neural network and deep learing</p>
 <p>Topics includes: </p>
 <li>Literature Survey</li>
