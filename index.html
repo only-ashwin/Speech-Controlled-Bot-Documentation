@@ -22,6 +22,7 @@
                 <a href="#speech-processing-models" class="nav-item">Speech Processing Models</a>
                 <a href="#recurrent-neural-network" class="nav-item">Recurrent Neural Network</a>
                 <a href="#speech-recog-system" class="nav-item">Speech Recognition System</a>
+                <a href="#code-explained" class="nav-item">Code Explaination</a>
                 <a href="#references" class="nav-item">References</a>
             </ul>
         </div>
@@ -387,6 +388,46 @@
                 <p>f our possible transcriptions “Hello”, “Hullo” and “Aullo”, obviously “Hello” will appear more frequently in a database of text (not to mention in our original audio-based training data) and thus is probably correct. So we'll pick “Hello” as our final transcription instead of the others. Done!</p>
                 <button class="btn"><a href="https://en.wikipedia.org/wiki/Speech_recognition" target="_blank">Learn More</a></button>
             </div>
+            <div id="code-explained" class="content">
+                <h2>Speech Recognition using Python</h2>
+                <p></p>
+                <h3>Method 1: Using Speech Recognition Library in Python</h3>
+                <p>To use speech recognition using python we first need to install the speech recognition library using <span class="cmd">$ pip install SpeechRecognition</span> type this command in command prompt of windows. SpeechRecognition is compatible with Python 2.6, 2.7 and 3.3+.
+                Once done installing it you have to install a library to access microphone of the system. For that purpose try <span class="cmd">$ pip install pyaudio</span> in the command prompt. Now your speech recognition library is ready to use.</p>
+                <p>Import speech recognition library in python by typing:</p>
+                <pre>import speech_recognition as s
+sr = s.Recognizer()</pre>
+                <p>These line of code above will access the Recognizer() function of Speech Recognition library.</p>
+                <h4>Working with Audio files:</h4>
+                <p>Second thing is to start listening to audio through microphone by typing:</p>
+                <pre>with s.Microphone() as m:
+audio = sr.listen(m)
+try:
+    text = sr.recognize_google(audio, language = 'en-IN',
+     show_all = True)
+    print("I thinks you said '"
+     + sr.recognize_google(audio) + "'")
+except:
+    print("I didn't get it, Try again")</pre>
+                <p>Above code uses Microphone() function, listen() function and recognize_google() function to identify what user is trying to speak. listen() takes input from microphone and stores it to a variable named audio.</p>
+                <p>Here recognize_google() funtion takes to arguments first is audio file and second one is language type as input.</p>
+                <p>Complete code for Speech Recognization using Python : </p>
+                <pre>import speech_recognition as s
+sr = s.Recognizer()
+print("I am listening to you............")
+with s.Microphone() as m:
+    audio = sr.listen(m)
+    try:
+        text = sr.recognize_google(audio, language = 'en-IN',
+         show_all = True )
+        print("I thinks you said '" 
+        + sr.recognize_google(audio) + "'")
+    except:
+        print("I didn't get it, Try again")</pre>
+                <p>Above is one of the simplest method to start listening to audio files and convert them to speech.</p>
+                <p>Output for the above programm: </p>
+                <img src="/img/Output/method1-output.png" alt="method1-output">
+                <button class="btn"><a href="https://realpython.com/python-speech-recognition/" target="_blank">Learn More</a></button>
             <div id="references" class="content">
                 <h2>References</h2>
                 <p></p>
